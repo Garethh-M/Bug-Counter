@@ -20,12 +20,6 @@ resultsForServerError = parseLog("master.log", "[error]: <html>")
 nonUniqueDates = list(resultsForConnectionError.keys()) + list(resultsForServerError.keys())
 uniqueDates = list(set(nonUniqueDates))
 sortedDates = sortDates(uniqueDates)
-# sortedDates to be the .keys() value for both of the above, but only unique values (so no duplicates)
-#with open("Error Count.csv", "wb") as output:
-#writer = csv.writer(output)
-#for date in sortedDates:
- #   output.writerow([date, resultsForConnectionError.get(date, 0), resultsForServerError.get(date, 0) ])
-  #  output.close()
 
 with open("Error Counter.csv", "w") as output:
     writer = csv.writer(output)
